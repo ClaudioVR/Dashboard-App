@@ -1,0 +1,203 @@
+* {
+	box-sizing: border-box;
+	font-family: Arial, sans-serif;
+}
+
+.container {
+	height: auto;
+	width: 100%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 70px auto;
+	grid-template-rows: 70px auto;
+	grid-template-areas:
+		"header header"
+		"nav main";
+}
+
+header {
+	background-color: #7477BF;
+	grid-area: header;
+}
+
+nav {
+	background-color: #4D4C72;
+	grid-area: nav;
+}
+
+
+/* --Dashboard--------------------------------- */
+
+.dashboard {
+/*	height: 50px;*/
+	background-color: #FFFFFF;
+	display: grid;
+	grid-template-columns: 1fr 6fr;
+	grid-template-rows: 50px 50px;
+}
+
+#alert-div {
+	grid-column: 1 / span 2;
+	display: flex;
+}
+
+#alert-box {
+	margin: auto;
+	background-color: blueviolet;
+	display: inline-block;
+	width: 80%;
+	padding: 5px 50px 5px 5px;
+	border-radius: 5px;
+	color: white;
+}
+
+.dashboard p {
+	padding: 0;
+	margin: 0;
+}
+
+.dashboardCorner{
+	grid-column: 1 / span 1;
+	background-color: #FFF;
+	padding: 15px 40px;
+}
+
+.dashboardSearch {
+	grid-column: 2 / -1;
+	background-color: #FBFBFB;
+	border-left: 1px solid #eee;
+	border-bottom: 1px solid #eee;
+
+	display: flex;
+	align-items: center;
+}
+
+#searchBar {
+	margin-left: auto;
+	margin-right: 50px;
+	height: 25px;
+	width: 20%;
+	padding: 5px
+}
+
+/* Line chart ------------------------- */
+/*--------------------------------------*/
+
+.lineChart {
+	width: 90%;
+	margin: auto;
+	position: relative;
+}
+
+.lineChart-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px; 
+}
+
+.lineChart-header h3 {
+	margin-right: auto; 
+	text-transform: uppercase;
+}
+
+button {
+	width: 50px;
+	border-radius: 5px;
+	margin: 5px;
+	padding: 5px;
+	
+}
+
+.chart {
+	position: relative;
+}
+
+canvas {
+	margin: auto;
+	width: 600px;
+}
+
+
+.bar-and-pie {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-template-rows: 450px;
+}
+
+.bar-and-pie h3 {
+	padding: 10px;
+	text-transform: uppercase;
+}
+
+.barChart {
+	height: 400px;
+	font-weight: 300px;
+/*	position: relative;*/
+	border-top: 2px solid #eee;
+	border-right: 2px solid #eee;
+}
+
+.pieChart {
+	height: 400px;
+	font-weight: 300px;
+	border-top: 2px solid #eee;
+}
+
+/* Social media ---------- */
+
+.socialMedia {
+	background-color: burlywood;
+	height: 200px;
+
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.twitter,
+.facebook,
+.google {
+	height: 100px;
+	width: 200px;
+	border: 1px solid;
+	display: flex;
+	align-items: center;
+}
+
+
+/* ICONS ---------------*/
+
+
+#twitterIcon {
+	background-color: blueviolet;
+	border-radius: 50%;
+	float: left;
+	margin-right: 10px;
+}
+
+.social-media-info p,
+									 h3 {
+	margin: 0;
+}
+
+
+/* Members ------------------*/
+
+.members {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 300px;
+}
+
+.members > div {
+	padding: 1.5em;
+	border: 1px solid #eee;
+}
+
+#member-search,
+#message-text-area {
+	margin: .5em;
+	padding: 5px;
+	width: 100%;
+}

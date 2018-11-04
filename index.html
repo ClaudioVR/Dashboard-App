@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dashboard app test</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+</head>
+
+<body>
+
+	<div class="container">
+		<header>Header</header>
+		<nav>Nav</nav>
+
+		<main>
+
+			<div class="dashboard">
+				<div class="dashboardCorner">
+				<p>Dashboard</p>
+				</div>
+				<div class="dashboardSearch">
+					<input type="text" id="searchBar" placeholder="Search">
+				</div>
+				<div id="alert-div">
+					<div id="alert-box">Alert: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio, adipisci</div>
+				</div>
+			</div>
+
+			<!-- Charts -------->
+	<div class="graphs">
+
+		<div class="responsive-chart">
+			<div class="lineChart-header">
+						<h3>Traffic</h3>
+						<button id="hourBtn">Hour</button>
+						<button id="dayBtn">Day</button>
+						<button id="weekBtn">Week</button>
+						<button id="monthBtn">Month</button>
+					</div>
+			<div class="lineChart">
+				<canvas id="myChart"></canvas>
+			</div>
+		</div>
+
+		<div class="bar-and-pie">
+			<div class="barChart">
+				<h3>Daily traffic</h3>
+				<canvas id="secondChart"></canvas>
+			</div>
+			<div class=" pieChart">
+				<h3>Mobile users</h3>
+				<canvas id="thirdChart"></canvas>
+			</div>
+		</div>
+
+	</div>
+
+<!-- Social Media -->
+
+			<div class="socialMedia">
+				<div class="twitter">
+					<img id="twitterIcon" src="icons/icon-twitter.svg" alt="#" height="70px" width="70px">
+					<div class="social-media-info">
+						<p>Twitter</p>
+						<h3>10,230</h3>
+					</div>
+				</div>
+				<div class="facebook">Facebook</div>
+				<div class="google">Google+</div>
+			</div>
+
+			
+<!--Member section-->
+		
+		<div class="members">
+			<div class="new-members">New members</div>			
+			<div class="recent-activity">Recent-activity</div>
+			<div class="message-user">
+				<h3>Message user</h3>
+				<input type="text" id="member-search" placeholder="Search for user">
+				<textarea name="message" id="message-text-area" rows="15" placeholder="Message for user"></textarea>
+				<button type="submit" id"send-btn">Send</button>
+			</div>
+			<div class="settings">Settings</div>
+		</div>
+
+		</main>
+	</div>
+
+
+
+
+	<script src="script.js"></script>
+</body>
+
+</html>
