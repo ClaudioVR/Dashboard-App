@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Dashboard app test</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css.map">
 	<link rel="stylesheet" href="styles.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 </head>
@@ -17,13 +18,14 @@
 			<div class="app-name">
 				<p class="app-logo"><b>MyApp</b>.com<sup>&trade;</sup></p>
 			</div>
+			<div id="bell-alert-msg" class="bell-alert-msg">
+				<p>You have some unread messages.</p>
+			</div>
 			<div class="bell-icon">
-				<img src="icons/icon-bell.svg" alt="bell icon">
+				<img id="bell" src="icons/icon-bell.svg" alt="bell icon">
 			</div>
 			<img src="images/member-1.jpg" id="user-img" alt="member one user image">
 			<p id="user-name">Amy Adams</p>
-
-
 		</header>
 
 		<nav>
@@ -58,6 +60,7 @@
 			</div>
 
 			<!-- Charts -------->
+
 			<div class="graphs">
 
 				<div class="responsive-chart">
@@ -125,18 +128,103 @@
 			<!--Member section-->
 
 			<div class="members">
+
 				<div class="new-members">
+
 					<h3>New Members</h3>
+
+					<div class="new-member">
+						<img src="images/member-1.jpg" alt="member one image">
+						<div class="user-details">
+							<p class="name">Victoria Chambers</p>
+							<p class="email">victoria.chambers@example.com</p>
+						</div>
+						<p class="sign-up-date">10/15/18</p>
+					</div>
+					<div class="new-member">
+						<img src="images/member-2.jpg" alt="member two image">
+						<div class="user-details">
+							<p class="name">Dale Byrd</p>
+							<p class="email">dale.byrd@example.com</p>
+						</div>
+						<p class="sign-up-date">08/13/18</p>
+					</div>
+					<div class="new-member">
+						<img src="images/member-3.jpg" alt="member three image">
+						<div class="user-details">
+							<p class="name">Jane Fonda</p>
+							<p class="email">jane.fonda@example.com</p>
+						</div>
+						<p class="sign-up-date">10/15/18</p>
+					</div>
+					<div class="new-member">
+						<img src="images/member-4.jpg" alt="member four image">
+						<div class="user-details">
+							<p class="name">Dyre Straits</p>
+							<p class="email">dyre.straits@example.com</p>
+						</div>
+						<p class="sign-up-date">11/09/18</p>
+					</div>
+
 				</div>
+
+				<!-- Recent activites	---	-->
+
 				<div class="recent-activity">
+
 					<h3>Recent activity</h3>
+
+					<div class="member-activity">
+						<img src="images/member-1.jpg" alt="member one image">
+						<div class="user-details">
+							<p class="activity-msg">Victoria Chambers like your page</p>
+							<p class="msg-time">5 hours ago</p>
+						</div>
+						<p class="activity-link">&gt;</p>
+					</div>
+					<div class="member-activity">
+						<img src="images/member-2.jpg" alt="member two image">
+						<div class="user-details">
+							<p class="activity-msg">Victoria Chambers thinks you're mad</p>
+							<p class="msg-time">2 days ago</p>
+						</div>
+						<p class="activity-link">&gt;</p>
+					</div>
+					<div class="member-activity">
+						<img src="images/member-3.jpg" alt="member three image">
+						<div class="user-details">
+							<p class="activity-msg">Jane Fonda has invited you for a jog</p>
+							<p class="msg-time">22 minutes ago</p>
+						</div>
+						<p class="activity-link">&gt;</p>
+					</div>
+					<div class="member-activity">
+						<img src="images/member-4.jpg" alt="member four image">
+						<div class="user-details">
+							<p class="activity-msg">Dyre Straits is still playing his guitar</p>
+							<p class="msg-time">5 minutes ago</p>
+						</div>
+						<p class="activity-link">&gt;</p>
+					</div>
+
 				</div>
+
+				<!--	Message users ---	-->
+
 				<div class="message-user">
-					<h3>Message user</h3>
+
+					<div id="msg-sent-div">
+						<h3 id="msg-user-header">Message user</h3>
+						<p id="msg-sent-confirm">NB: Your message has been sent.</p>
+					</div>
+
 					<input type="text" id="member-search" placeholder="Search for user">
-					<textarea name="message" id="message-text-area" rows="15" placeholder="Message for user"></textarea>
+					<textarea name="message" id="message-text-area" rows="10" placeholder="Message for user"></textarea>
 					<button type="submit" id="send-btn">Send</button>
 				</div>
+
+				<!--	Settings --- -->
+
 				<div class="settings">
 					<h3>Settings</h3>
 
@@ -150,18 +238,35 @@
 						<input class="toggle" id="profile-toggle" type="checkbox">
 					</div>
 
-					<select name="time-zone" id="time-zone"></select>
-					<button>Save</button>
-					<button>Cancel</button>
+					<select name="time-zone" id="time-zone">
+						<option value="-6.0">(GMT -6:00) Central Time (US &amp; Canada), Mexico City</option>
+						<option value="-5.0">(GMT -5:00) Eastern Time (US &amp; Canada), Bogota, Lima</option>
+						<option value="-4.0">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
+						<option value="-3.5">(GMT -3:30) Newfoundland</option>
+						<option value="-3.0">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
+						<option value="-2.0">(GMT -2:00) Mid-Atlantic</option>
+						<option value="-1.0">(GMT -1:00 hour) Azores, Cape Verde Islands</option>
+						<option value="0.0">(GMT) Western Europe Time, London, Lisbon, Casablanca</option>
+						<option value="1.0" selected>(GMT +1:00 hour) Brussels, Copenhagen, Madrid, Paris</option>
+						<option value="2.0">(GMT +2:00) Kaliningrad, South Africa</option>
+						<option value="3.0">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
+						<option value="3.5">(GMT +3:30) Tehran</option>
+						<option value="4.0">(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
+						<option value="4.5">(GMT +4:30) Kabul</option>
+						<option value="5.0">(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+						<option value="5.5">(GMT +5:30) Bombay, Calcutta, Madras, New Delhi</option>
+					</select>
+
+					<div class="saveAndCancel">
+						<button id="save-btn">Save</button>
+						<button id="cancel-btn">Cancel</button>
+					</div>
 
 				</div>
 			</div>
 
 		</main>
 	</div>
-
-
-
 
 	<script src="charts.js"></script>
 	<script src="script.js"></script>

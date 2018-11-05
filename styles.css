@@ -32,6 +32,10 @@ nav {
 	grid-area: nav;
 }
 
+button {
+	cursor: pointer;
+}
+
 
 /* --Dashboard--------------------------------- */
 /*----------------------------------------------*/
@@ -58,6 +62,18 @@ nav {
 	padding: 10px 15px 10px 50px;
 	border-radius: 5px;
 	color: white;
+	
+	opacity: 0;
+	animation: fadeIn ease-in-out 3s forwards;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 #cross-icon {
@@ -80,8 +96,8 @@ nav {
 .dashboardSearch {
 	grid-column: 2 / -1;
 	background-color: var(--tertiary-color);
-	border-left: 1px solid #eee;
-	border-bottom: 1px solid #eee;
+	border-left: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
 
 	display: flex;
 	align-items: center;
@@ -105,17 +121,21 @@ nav {
 }
 
 .lineChart-header {
-	width: 95%;
-	margin: auto;
+	width: 100%;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	padding: 10px; 
+	padding: 10px;
+	padding-right: 5%;
 	
 }
 
 .lineChart-header h3 {
 	margin-right: auto; 
+	text-transform: uppercase;
+}
+
+h3 {
 	text-transform: uppercase;
 }
 
@@ -163,6 +183,7 @@ canvas {
 }
 
 /* Social media -------------------------------------- */
+/*-----------------------------------------------------*/
 
 .socialMedia {
 	height: 200px;
@@ -183,12 +204,17 @@ canvas {
 
 
 /* ICONS ----------------------------------------------*/
+/*-----------------------------------------------------*/
 
-/*Header*/
+/*--Header-----*/
 
 .app-name {
 	margin-right: auto;
 	padding: 20px;
+}
+
+.app-logo {
+	color: white;
 }
 
 #user-img {
@@ -198,10 +224,55 @@ canvas {
 	margin: 0 10px;
 }
 
+.bell-alert-msg {
+	display: none;
+	border-radius: 5px;
+	background-color: #74B1BF;
+	padding: 0 10px;
+	margin-right: 10px; 
+	color: white;
+}
+
 .bell-icon {
 	height: 40px;
 	width: 40px;
 	margin: 0 10px;
+	cursor: pointer;
+}
+
+.bell-icon:hover {
+	animation: ring 3s .4s ease-in-out infinite;
+	transform-origin: 50% 25%;
+}
+
+/* Courtesy of: */
+/*https://codepen.io/Mrshcom/pen/bqmFg*/
+
+@keyframes ring {
+  0% { transform: rotate(0); }
+  1% { transform: rotate(30deg); }
+  3% { transform: rotate(-28deg); }
+  5% { transform: rotate(34deg); }
+  7% { transform: rotate(-32deg); }
+  9% { transform: rotate(30deg); }
+  11% { transform: rotate(-28deg); }
+  13% { transform: rotate(26deg); }
+  15% { transform: rotate(-24deg); }
+  17% { transform: rotate(22deg); }
+  19% { transform: rotate(-20deg); }
+  21% { transform: rotate(18deg); }
+  23% { transform: rotate(-16deg); }
+  25% { transform: rotate(14deg); }
+  27% { transform: rotate(-12deg); }
+  29% { transform: rotate(10deg); }
+  31% { transform: rotate(-8deg); }
+  33% { transform: rotate(6deg); }
+  35% { transform: rotate(-4deg); }
+  37% { transform: rotate(2deg); }
+  39% { transform: rotate(-1deg); }
+  41% { transform: rotate(1deg); }
+  43% { transform: rotate(0); }
+  100% { transform: rotate(0); }
 }
 
 #user-name {
@@ -214,6 +285,11 @@ canvas {
 .nav-icons {
 	width: 50%;
 	margin: 25px auto;
+	cursor: pointer;
+}
+
+.nav-icons:hover {
+	opacity: 1;
 }
 
 .icon-off {
@@ -254,17 +330,77 @@ canvas {
 }
 
 
-/* Members ------------------------------------------*/
+/* Members --------------------------------------------*/
+/*-----------------------------------------------------*/
 
 .members {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 300px;
+	grid-template-rows: auto;
 }
 
 .members > div {
 	padding: 1.5em;
 	border: 1px solid #ddd;
+}
+
+/*New Members and Member activities---*/
+
+.new-member,
+.member-activity {
+	margin: 10px;
+	padding: 5px;
+	display: flex; 
+	align-items: center;
+	border-bottom: 1px solid #ddd;
+}
+
+.name,
+.email,
+.activity-msg,
+.msg-time {
+	margin: 5px;
+}
+
+.name {
+	font-weight: 800;
+}
+
+.sign-up-date{
+	margin-left: auto;
+}
+
+.activity-link {
+	margin-left: auto;
+	margin-right: 2em;
+	cursor: pointer;
+}
+
+.new-member img,
+.member-activity img{
+	height: 50px;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+
+/*Message users ---*/
+
+#msg-sent-div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#msg-user-header {
+	display: inline-block;
+}
+
+#msg-sent-confirm {
+	display: none;
+	color: var(--primary-color);
+	padding: 8px;
+	margin: 0;
 }
 
 #member-search,
@@ -286,8 +422,15 @@ canvas {
 	text-transform: uppercase;
 }
 
-/* Settings ----------------------------------------*/
+.message-user{
+	display: grid;
+	align-items: end;
+}
 
+/* Settings -------------------------------------------*/
+/*-----------------------------------------------------*/
+
+/* I cannot recall where I found this bit of code... but, ye thanx for putting it out there mate... */
 
 .toggle {
   -webkit-appearance: none;
@@ -341,11 +484,49 @@ canvas {
 .toggle-row {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
-	
 }
 
+.toggle-row > label {
+	margin-right: 10%;
+}
 
+#time-zone {
+	margin: 20px 0;
+	width: 100%;
+	height: 30px;
+	border-radius: 5px;
+	font-size: .9em;
+}
+
+.saveAndCancel {
+	width: 100%;
+	margin: auto;
+	display: flex;
+}
+
+#save-btn,
+#cancel-btn {
+	color: white;
+	width: 45%;
+	margin: auto;
+	padding: 20px;
+	font-size: 1em;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+#save-btn {
+	background: var(--primary-color);
+}
+
+#cancel-btn {
+	background: #bbb;
+}
+
+.settings {
+	display: grid;
+	align-items: end;
+}
 
 
 
