@@ -36,6 +36,9 @@ button {
 	cursor: pointer;
 }
 
+main {
+	margin: auto;
+}
 
 /* --Dashboard--------------------------------- */
 /*----------------------------------------------*/
@@ -156,10 +159,9 @@ canvas {
 	width: 600px;
 }
 
-
 .bar-and-pie {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	grid-template-rows: 450px;
 }
 
@@ -181,27 +183,6 @@ canvas {
 	font-weight: 300px;
 	border-top: 2px solid #ddd;
 }
-
-/* Social media -------------------------------------- */
-/*-----------------------------------------------------*/
-
-.socialMedia {
-	height: 200px;
-	
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-}
-
-.sm-box {
-	background-color: var(--tertiary-color);
-	height: 100px;
-	width: 25%;
-	border: 1px solid #ddd;
-	display: flex;
-	align-items: center;
-}
-
 
 /* ICONS ----------------------------------------------*/
 /*-----------------------------------------------------*/
@@ -319,6 +300,33 @@ canvas {
 	margin-left: 20px;
 }
 
+/* Social media -------------------------------------- */
+/*-----------------------------------------------------*/
+
+.socialMedia {
+	margin-top: 100px;
+	height: auto;
+	width: 100%;	
+	padding: 20px;
+}
+
+@media (min-width: 1024px) {
+	.socialMedia {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-gap: 15px;
+	}
+}
+
+.sm-box {
+	background-color: var(--tertiary-color);
+	height: 100px;
+	border: 1px solid #ddd;
+	display: flex;
+	align-items: center;
+}
+
+
 .social-media-info 
 		p,
 		h3 {
@@ -335,8 +343,8 @@ canvas {
 
 .members {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: auto;
+	grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+	grid-auto-rows: auto;
 }
 
 .members > div {

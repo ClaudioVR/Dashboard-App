@@ -81,7 +81,14 @@
 				responsive: true,
 				maintainAspectRatio: false,
 				legend: {
+					display: true,
 					position: 'right',
+					labels: {
+						boxWidth: 10,
+						padding: 20
+					}
+					
+					
 				}
 			}
 		});
