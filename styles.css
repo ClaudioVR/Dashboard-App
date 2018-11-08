@@ -62,7 +62,7 @@ main {
 	display: flex;
 	align-items: center;
 	width: 90%;
-	padding: 10px 15px 10px 50px;
+	padding: 10px 15px;
 	border-radius: 5px;
 	color: white;
 	
@@ -212,19 +212,50 @@ canvas {
 	padding: 0 10px;
 	margin-right: 10px; 
 	color: white;
+	
+}
+
+.bell-alert-msg a {
+	display: block;
+	margin: 3px;
+	color: white;
+	font-size: .7em
 }
 
 .bell-icon {
 	height: 40px;
 	width: 40px;
+	padding-top: 5px;
+	padding-left: 4px;
 	margin: 0 10px;
 	cursor: pointer;
+	position: relative;
+	transition: .8s;
 }
 
 .bell-icon:hover {
-	animation: ring 3s .4s ease-in-out infinite;
+	height: 50px;
+	width: 50px;
+	animation: ring 3s .4s ease-in-out forwards;
 	transform-origin: 50% 25%;
 }
+
+/*
+.bell-icon:hover .dropdown-content {
+	display: block;
+}
+*/
+
+#notification-dot {
+	position: absolute;
+	top: 0;
+	right: 0px;
+	background-color: red;
+	height: 8px;
+	width: 8px;
+	border-radius: 50%;
+}
+
 
 /* Courtesy of: */
 /*https://codepen.io/Mrshcom/pen/bqmFg*/
@@ -304,18 +335,15 @@ canvas {
 /*-----------------------------------------------------*/
 
 .socialMedia {
-	margin-top: 100px;
+	margin-top: 40px;
 	height: auto;
 	width: 100%;	
 	padding: 20px;
-}
-
-@media (min-width: 1024px) {
-	.socialMedia {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-		grid-gap: 15px;
-	}
+	
+	display: grid;
+	grid-template-columns: 80%;
+	justify-content: center;
+	grid-gap: 15px;
 }
 
 .sm-box {
@@ -405,8 +433,6 @@ canvas {
 }
 
 #msg-sent-confirm {
-	display: none;
-	color: var(--primary-color);
 	padding: 8px;
 	margin: 0;
 }
@@ -414,7 +440,8 @@ canvas {
 #member-search,
 #message-text-area,
 #send-btn {
-	margin: .5em;
+	
+	margin-bottom: 10px;
 	padding: 5px;
 	width: 100%;
 	border-radius: 5px;
@@ -423,6 +450,8 @@ canvas {
 
 #send-btn {
 	background-color: var(--primary-color);
+	width: 40%;
+	margin: auto;
 	color: white;
 	padding: 20px;
 	font-size: 1em;
@@ -455,7 +484,8 @@ canvas {
   cursor: pointer;
   background-color: #707070;
   transition: background-color ease 0.3s;
-	margin-right: 20%;
+	margin-left: auto;
+	margin-right: 30%;
 }
 
 .toggle:before {
@@ -492,10 +522,6 @@ canvas {
 .toggle-row {
 	display: flex;
 	align-items: center;
-}
-
-.toggle-row > label {
-	margin-right: 10%;
 }
 
 #time-zone {
@@ -538,7 +564,40 @@ canvas {
 
 
 
+/* @ media 768px -----------------------------------*/
 
+@media (min-width: 768px) {
+	.socialMedia {
+		margin-top: 0;
+		display: grid;
+		grid-template-columns: 90%;
+		grid-gap: 15px;
+	}
+	#send-btn {
+		width: 80%;
+	}
+	.toggle {
+		margin-right: 45%;
+	}
+	.bell-alert-msg a {
+		font-size: 1rem;
+	}
+}
+
+
+/* @media 1024px -----------------------------------*/
+
+@media (min-width: 1024px) {
+	.socialMedia {
+		margin-top: 30px;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+		grid-gap: 15px;
+	}
+	.toggle {
+		margin-right: 30%;
+	}
+}
 
 
 

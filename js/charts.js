@@ -37,10 +37,10 @@
 		let myBarChart = new Chart(barChart, {
 			type: 'bar',
 			data: {
-				labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+				labels: ["Mon", "Tue", "Wed", "Thrs", "Fri"],
 				datasets: [{
 					label: '# of Votes',
-					data: [12, 19, 3, 5, 2, 3],
+					data: [12, 19, 15, 12, 17, 8, 6,],
 					borderWidth: 1,
 					backgroundColor: '#7377BF'
 				}]
@@ -49,6 +49,14 @@
 				legend: {
 					display: false,
 				},
+				layout: {
+        	padding: {
+						left: 10,
+						right: 10,
+						top: 10,
+						bottom: 10
+           }
+        },
 				responsive: true,
 				maintainAspectRatio: false
 			}
@@ -87,9 +95,15 @@
 						boxWidth: 10,
 						padding: 20
 					}
-					
-					
-				}
+				},
+				layout: {
+            padding: {
+                left: 10,
+                right: 10,
+                top: 10,
+                bottom: 10
+            }
+        }	
 			}
 		});
 

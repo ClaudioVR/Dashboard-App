@@ -19,10 +19,13 @@
 				<p class="app-logo"><b>MyApp</b>.com<sup>&trade;</sup></p>
 			</div>
 			<div id="bell-alert-msg" class="bell-alert-msg">
-				<p>You have some unread messages.</p>
+				<a href="#">1 unread message</a>
+				<a href="#">2 unread posts</a>
 			</div>
 			<div class="bell-icon">
+				<div id="notification-dot"></div>
 				<img id="bell" src="icons/icon-bell.svg" alt="bell icon">
+
 			</div>
 			<img src="images/member-1.jpg" id="user-img" alt="member one user image">
 			<p id="user-name">Amy Adams</p>
@@ -213,10 +216,12 @@
 
 				<div class="message-user">
 
-					<div id="msg-sent-div">
-						<h3 id="msg-user-header">Message user</h3>
-						<p id="msg-sent-confirm">NB: Your message has been sent.</p>
-					</div>
+					<form action="">
+						<div id="msg-sent-div">
+							<h3 id="msg-user-header">Message user</h3>
+							<p id="msg-sent-confirm"></p>
+						</div>
+					</form>
 
 					<input type="text" id="member-search" placeholder="Search for user">
 					<textarea name="message" id="message-text-area" rows="10" placeholder="Message for user"></textarea>
@@ -228,14 +233,15 @@
 				<div class="settings">
 					<h3>Settings</h3>
 
-					<div class="toggle-row">
-						<label for="email-toggle">Send email notifications</label>
-						<input class="toggle" id="email-toggle" type="checkbox">
-					</div>
-
-					<div class="toggle-row">
-						<label for="profile-toggle">Send email notifications</label>
-						<input class="toggle" id="profile-toggle" type="checkbox">
+					<div class="toggle-switches">
+						<div class="toggle-row">
+							<label for="email-toggle">Send email notifications</label>
+							<input class="toggle" id="toggle" type="checkbox">
+						</div>
+						<div class="toggle-row">
+							<label for="profile-toggle">Set Profile to Pulic </label>
+							<input class="toggle" id="toggle" type="checkbox">
+						</div>
 					</div>
 
 					<select name="time-zone" id="time-zone">
@@ -268,8 +274,8 @@
 		</main>
 	</div>
 
-	<script src="charts.js"></script>
-	<script src="script.js"></script>
+	<script src="js/charts.js"></script>
+	<script src="js/script.js"></script>
 </body>
 
 </html>
